@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>Keyword App</title>
+	</head>
+	<body>
+		<h3 style="color:maroon;">KeywordTrap.com</h3>
+		<h4> Welcome to the keyword application </h4>
+		{% if error %}
+			<p style = "color:red;"> Please submit a search term. </p>
+		{% endif %}
+		<form action = "" method = "get">
+			<input type = "text" name = "q">
+			<input type = "submit" value = "Search">
+		</form>
+		<p style="border: solid 1px red; display: inline-block; padding: 1px;"> you searched for <b>{{ query }}</b></p>
+		<p style="color:green;""><b>Google Results</b></p>
+		<table border='1' cellpadding ='5'>
+			{% for item in results_google%}
+				<tr>
+					<td><input type="checkbox" name=""></td>
+					<td> {{item}} </td>
+				</tr>
+			{% endfor %}
+		</table>
+
+		<p style="color:red;"><b>Bing Results</b></p>
+		<table border='1' cellpadding ='5'>
+			{% for item in results_bing%}
+				<tr>
+					<td><input type="checkbox" name=""></td>
+					<td> {{item}} </td>
+				</tr>
+			{% endfor %}
+		</table>
+
+		<p style="color:blue;"><b>Yahoo Results</b></p>
+		<table border='1' cellpadding ='5'>
+			{% for item in results_yahoo%}
+				<tr>
+					<td><input type="checkbox" name=""></td>
+					<td> {{item}} </td>
+				</tr>
+			{% endfor %}
+		</table>
+	</body>
+</html>
